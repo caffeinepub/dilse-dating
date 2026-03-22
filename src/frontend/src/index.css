@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Blush pink palette */
+    --background: 0.92 0.02 10;
+    --foreground: 0.16 0.01 10;
+    --card: 0.97 0.01 8;
+    --card-foreground: 0.16 0.01 10;
+    --popover: 0.97 0.01 8;
+    --popover-foreground: 0.16 0.01 10;
+    --primary: 0.43 0.1 10;
+    --primary-foreground: 0.97 0.01 8;
+    --secondary: 0.88 0.04 8;
+    --secondary-foreground: 0.43 0.1 10;
+    --muted: 0.93 0.015 8;
+    --muted-foreground: 0.47 0.01 8;
+    --accent: 0.88 0.04 8;
+    --accent-foreground: 0.43 0.1 10;
+    --destructive: 0.45 0.18 25;
+    --destructive-foreground: 0.97 0.01 8;
+    --border: 0.86 0.025 8;
+    --input: 0.86 0.025 8;
+    --ring: 0.43 0.1 10;
+    --radius: 1rem;
+    --chart-1: 0.43 0.1 10;
+    --chart-2: 0.65 0.08 10;
+    --chart-3: 0.75 0.05 10;
+    --chart-4: 0.55 0.09 15;
+    --chart-5: 0.5 0.09 5;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .gradient-blush {
+    background: linear-gradient(135deg, oklch(0.92 0.02 10), oklch(0.88 0.04 8));
+  }
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.93 0.025 8) 0%,
+      oklch(0.88 0.045 8) 100%
+    );
+  }
+  .text-gradient-primary {
+    background: linear-gradient(135deg, oklch(0.43 0.1 10), oklch(0.55 0.09 5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-shadow {
+    box-shadow: 0 4px 24px oklch(0.43 0.1 10 / 0.08), 0 1px 4px
+      oklch(0.43 0.1 10 / 0.06);
+  }
+  .card-shadow-hover {
+    box-shadow: 0 8px 32px oklch(0.43 0.1 10 / 0.14), 0 2px 8px
+      oklch(0.43 0.1 10 / 0.1);
+  }
+}
